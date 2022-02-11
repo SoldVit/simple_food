@@ -1,0 +1,36 @@
+$accent: #ff6838;
+$title: #363853;
+$default: #31352b;
+$accent-status: #ff7a501a;
+$bg: #f9faff;
+$white: #fff;
+
+%rubik-400 {
+  font-family: "Rubik-Regular", sans-serif;
+  font-weight: 400;
+}
+
+%rubik-italik {
+  font-family: "Rubik-Italic", sans-serif;
+  font-weight: 400;
+}
+
+%rubik-300 {
+  font-family: "Rubik-Light", sans-serif;
+  font-weight: 300;
+}
+
+%rubik-500 {
+  font-family: "Rubik-Medium", sans-serif;
+  font-weight: 500;
+}
+
+%rubik-600 {
+  font-family: "Rubik-SemiBold", sans-serif;
+  font-weight: 600;
+}
+
+%rubik-700 {
+  font-family: "Rubik-Bold", sans-serif;
+  font-weight: 700;
+}

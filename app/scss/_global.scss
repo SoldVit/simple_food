@@ -1,0 +1,108 @@
+html,
+body {
+  height: 100vh;
+}
+
+body {
+  color: default;
+  @extend %rubik-400;
+  font-size: 20px;
+  line-height: 1.4;
+  display: flex;
+  flex-direction: column;
+  background-color: $bg;
+}
+
+main {
+  flex-grow: 1;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.logo {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  outline: transparent;
+  width: 200px;
+  height: 39px;
+  border-radius: 5px;
+  transition: border 0.3s, opacity 0.3s;
+
+  &:focus {
+    box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.btn-accent {
+  background-color: $accent;
+  color: $white;
+  border-radius: 6px;
+  transition: background-color 0.3s,
+    color 0.3s,
+    box-shadow 0.3s;
+
+  &:focus {
+    background-color: rgba(255, 122, 80, 0.1);
+    color: $accent;
+    box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
+  }
+
+  &:hover {
+    background-color: $white;
+    color: $accent;
+    box-shadow: 0px 5px 12px rgba(255, 104, 56, 0.2),
+      0px 0px 0px 2px rgba(255, 104, 56, 0.7);
+  }
+
+  &:active {
+    background-color: rgba(255, 122, 80, 0.1);
+    color: $accent;
+  }
+}
+
+.status {
+  outline: transparent;
+  border-radius: 5px;
+  transition: border 0.3s, text-shadow 0.3s, color 0.3s;
+  border: 2px solid transparent;
+
+  &:focus {
+    border: 2px solid $accent;
+  }
+
+  &:hover {
+    color: $accent;
+    text-decoration: none;
+  }
+
+  &:active {
+    text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
+    text-decoration: none;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
