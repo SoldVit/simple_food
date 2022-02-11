@@ -42,7 +42,6 @@ img {
 }
 
 input,
-button,
 textarea,
 select {
   font: inherit;
@@ -55,6 +54,7 @@ button {
   border-color: transparent;
   border: 0;
   outline: none;
+  padding: 0;
 }
 
 a {
