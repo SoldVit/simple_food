@@ -96,6 +96,7 @@
       fill: #fff2ed;
     }
   }
+
   // В апперсанте img почему то не работает
   &__img:hover~&__counter {
     background-color: $white;
@@ -190,12 +191,8 @@
   margin-bottom: 120px;
 
   &__title {
-    font-weight: 500;
-    font-size: 36px;
-    line-height: 1.3;
     text-align: center;
     margin-bottom: 60px;
-    color: $darkBlue-900;
   }
 
   &__items {
@@ -534,14 +531,6 @@
     &:active::before {
       background-color: #fff2ed;
     }
-
-    &::after {
-      content: "";
-      width: 100%;
-      height: 137%;
-      position: absolute;
-      transform: translate(-100%, -13%);
-    }
   }
 
   &__img {
@@ -562,4 +551,75 @@
       fill: $orange-900;
     }
   }
+}
+
+.features {
+  margin-bottom: 120px;
+
+  &__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 440px;
+    height: 585px;
+    margin-right: 120px;
+  }
+
+  &__info {
+    max-width: 470px;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+
+  }
+
+  &__text {
+    margin-bottom: 30px;
+    line-height: 1.5;
+  }
+
+  &__list {
+    margin-bottom: 30px;
+    padding-left: 64px;
+    position: relative;
+  }
+
+  &__item {
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      background-repeat: no-repeat;
+      background-size: cover;
+      left: 0;
+      right: 0;
+      width: 34px;
+      height: 34px;
+    }
+
+    &--clock::before {
+      background-image: url("../images/sprite.svg#features--clock");
+    }
+    &--сourier::before {
+      background-image: url("../images/sprite.svg#features--сourier");
+    }
+    &--stall::before {
+      background-image: url("../images/sprite.svg#features--stall");
+    }
+  }
+
+&__btn {
+  padding: 12px 32px;
+  font-size: 18px;
+}
+
 }

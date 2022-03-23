@@ -24,6 +24,13 @@ main {
   margin: 0 auto;
 }
 
+.title {
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 1.3;
+  color: $darkBlue-900;
+}
+
 .logo {
   outline: transparent;
   border-radius: 5px;
@@ -54,6 +61,7 @@ main {
   transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, fill 0.3s, ;
   line-height: 1.3;
   font-size: 14px;
+  display: inline-block;
 
   &:focus {
     background-color: rgba($accent-status, 0.1);
