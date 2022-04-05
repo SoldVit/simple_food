@@ -4,6 +4,8 @@
 @import "libs";
 @import "global";
 
+// Проверь ,пожалуйста, в том ли порядке импорты, в критериях-другой.
+
 .header {
 
   &__inner {
@@ -36,13 +38,8 @@
     }
   }
 
-
-  &__link::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    transform: translate(0, -20%);
+  &__link::after {
+    transform: translate(-100%, -20%);
   }
 
   &__link--active {
@@ -63,12 +60,11 @@
     }
   }
 
-
   &__img {
     width: 44px;
     height: 44px;
     padding: 11px;
-    stroke: $darkBlue-900;
+    stroke: $darkblue-900;
     fill: $white;
     outline: transparent;
     border-radius: 5px;
@@ -92,12 +88,12 @@
 
     &:active {
       background-color: #fff2ed;
-      stroke: $darkBlue-900;
+      stroke: $darkblue-900;
       fill: #fff2ed;
     }
   }
 
-  // В апперсанте img почему то не работает
+  // в апперсанте img почему то не работает
   &__img:hover~&__counter {
     background-color: $white;
     color: $orange-900;
@@ -142,9 +138,12 @@
 }
 
 .hero {
-  display: flex;
-  justify-content: space-between;
   margin-bottom: 120px;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
 
   &__content {
     max-width: 450px;
@@ -156,7 +155,7 @@
     font-size: 66px;
     line-height: 1.3;
     text-transform: uppercase;
-    color: $darkBlue-900;
+    color: $darkblue-900;
     margin-bottom: 20px;
     @include text-shorten(2);
 
@@ -188,7 +187,7 @@
 }
 
 .categories {
-  margin-bottom: 120px;
+  margin-bottom: 116px;
 
   &__title {
     text-align: center;
@@ -234,9 +233,9 @@
     &:focus {
       box-shadow: 0 0 0 2px rgba($orange-900, 0.7);
       background-color: $white;
-      fill: $darkBlue-900;
-      stroke: $darkBlue-900;
-      color: $darkBlue-900;
+      fill: $darkblue-900;
+      stroke: $darkblue-900;
+      color: $darkblue-900;
     }
 
     &:hover {
@@ -379,7 +378,6 @@
 
 .subscribe {
 
-
   &__logo {
     margin-bottom: 30px;
   }
@@ -405,7 +403,7 @@
     }
 
     &:hover::placeholder {
-      color: $darkBlue-900;
+      color: $darkblue-900;
     }
   }
 
@@ -415,6 +413,7 @@
     position: relative;
     display: flex;
     align-items: center;
+    width: 100%;
 
     &:focus {
       fill: $orange-900;
@@ -445,7 +444,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-bottom: 12px;
+    margin-bottom: 5px;
   }
 
   &__item {
@@ -456,10 +455,6 @@
     position: relative;
 
     &::after {
-      content: "";
-      width: 100%;
-      height: 137%;
-      position: absolute;
       transform: translate(-100%, -13%);
     }
 
@@ -473,8 +468,6 @@
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center;
-
-
     }
 
     &--adress::before {
@@ -507,6 +500,11 @@
   }
 
   &__link {
+    position: relative;
+
+    &::after {
+      transform: translate(-94%, -3%);
+    }
 
     &::before {
       content: '';
@@ -565,6 +563,7 @@
   &__img {
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     width: 440px;
     height: 585px;
     margin-right: 120px;
@@ -576,7 +575,6 @@
 
   &__title {
     margin-bottom: 30px;
-
   }
 
   &__text {
@@ -600,6 +598,7 @@
       position: absolute;
       background-repeat: no-repeat;
       background-size: cover;
+      background-position: center;
       left: 0;
       right: 0;
       width: 34px;
@@ -609,17 +608,363 @@
     &--clock::before {
       background-image: url("../images/sprite.svg#features--clock");
     }
+
     &--сourier::before {
       background-image: url("../images/sprite.svg#features--сourier");
     }
+
     &--stall::before {
       background-image: url("../images/sprite.svg#features--stall");
     }
   }
 
-&__btn {
-  padding: 12px 32px;
-  font-size: 18px;
+  &__btn {
+    padding: 12px 32px;
+    font-size: 18px;
+  }
+
 }
 
+.restaurants {
+  margin-bottom: 125px;
+
+  &__title {
+    margin-bottom: 45px;
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 30px;
+  }
+}
+
+.restaurants-card {
+  background-color: $white;
+  border-radius: 10px;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
+
+  &:hover {
+    box-shadow: 0 3px 15px rgba(255, 104, 56, 0.5);
+  }
+
+  &__img {
+    margin-bottom: 15px;
+    object-fit: contain;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0 0 20px 20px;
+    line-height: 1.3;
+    @include text-shorten(1);
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px 17px 52px;
+    align-items: center;
+  }
+
+  &__time {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.6;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      background-image: url("../images/sprite.svg#restaurants-card--timer");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      left: -33px;
+      top: 3px;
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  &__link {
+    background-color: $orange-900;
+    padding: 5px 28px;
+    border-radius: 20px;
+    line-height: 0;
+
+    &:hover {
+
+      .restaurants-card__arrow {
+        transform: translateX(80%);
+      }
+    }
+  }
+
+  &__arrow {
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s;
+  }
+}
+
+.reviews {
+  margin-bottom: 120px;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 45px;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 55px;
+  }
+
+  &__img {
+    object-fit: contain;
+    margin-right: 80px;
+  }
+
+  &__quote {
+    max-width: 650px;
+    position: relative;
+    margin-right: 50px;
+  }
+
+  &__text {
+    max-width: 570px;
+    font-style: italic;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    @include text-shorten(5);
+  }
+
+  &__author {
+    font-weight: 500;
+    color: $orange-900;
+    margin-bottom: 10px;
+  }
+
+  &__profession {
+    font-size: 14px;
+  }
+
+  &__img-quotes--left,
+  &__img-quotes--right {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 20px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+
+  &__img-quotes--left::before {
+    background-image: url(../images/sprite.svg#reviews--left);
+    left: -30px;
+  }
+
+  &__img-quotes--right::before {
+    right: -48px;
+    bottom: 30px;
+    background-image: url(../images/sprite.svg#reviews--right);
+  }
+
+  &__profession {
+    font-size: 14px;
+  }
+
+  &__arrows {
+    display: flex;
+    justify-content: space-between;
+    max-width: 219px;
+    margin: 0 auto;
+    margin-top: -25px;
+  }
+
+  &__arrow {
+
+    &--left,
+    &--right {
+      width: 38px;
+      height: 38px;
+      fill: $silver;
+      stroke: $silver;
+      border: 1px solid transparent;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: border-color 0.3s,
+        fill 0.3s,
+        stroke 0.3s,
+        background-color 0.3s;
+      outline: transparent;
+
+      &:focus {
+        border-color: $orange-900;
+      }
+
+      &:hover {
+        fill: #ffae94;
+        stroke: #ffae94;
+        background-color: #fff2ed;
+      }
+
+      &:active {
+        fill: $orange-900;
+        stroke: #fff2ed;
+        background-color: #fff2ed;
+      }
+    }
+  }
+}
+
+.slick {
+
+  &-arrow {
+    font-size: 0;
+  }
+
+  &-dots {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+
+    li {
+      line-height: 0;
+
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+    }
+
+    button {
+      font-size: 0;
+      background-color: $silver;
+      border-radius: 50%;
+      border: 1px solid transparent;
+      width: 15px;
+      height: 15px;
+      transition: border-color 0.3s,
+        background-color 0.3s;
+
+      &:focus {
+        border-color: $orange-900;
+      }
+
+      &:hover {
+        background-color: #fff2ed;
+        border-color: $orange-900;
+      }
+
+      &:active {
+        background-color: #ffae94;
+      }
+    }
+  }
+
+  &-active {
+
+    button {
+      background-color: $orange-900;
+    }
+  }
+}
+
+.application {
+  margin-bottom: 120px;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__info {
+    max-width: 540px;
+    margin-top: 40px;
+  }
+
+  &__title {
+    margin-bottom: 45px;
+  }
+
+  &__text {
+    margin-bottom: 35px;
+  }
+
+  &__links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__link {
+
+    &--app,
+    &--google {
+      position: relative;
+
+      &::before {
+        position: absolute;
+        content: '';
+        height: 40px;
+      }
+    }
+
+    &--app {
+
+      &::after {
+        width: 120px;
+        transform: translate(0, -5%);
+      }
+    }
+
+    &--google {
+
+      &::after {
+        width: 135px;
+        transform: translate(-289%, -5%);
+      }
+    }
+
+    &--app::before {
+      background-image: url('../images/icons/application/app-store.jpg');
+      width: 120px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    &--google::before {
+      background-image: url('../images/icons/application/google-play.jpg');
+      width: 135px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      right: 255px;
+    }
+  }
+
+  &__img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 570px;
+    height: 380px;
+  }
 }
