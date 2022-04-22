@@ -1,0 +1,138 @@
+<header class="header" id="header">
+  <div class="container">
+    <nav class="header__inner">
+
+      <a class="logo" href="#">
+        <img class="logo__img header__logo-img" width="200" height="39" src="images/logo.svg" alt="Логотип сайта">
+      </a>
+
+      <div class="header__nav">
+          <button class="header__btn" type="button">
+            <span class="header__span"></span>
+          </button>
+
+        <ul class="menu">
+          <li class="menu__item">
+            <a class="menu__link status menu__link--active wrapper-click" href="#header">
+              Главная
+            </a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link status wrapper-click" href="#categories">
+              Блюда
+            </a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link status wrapper-click" href="#contacts">
+              Контакты
+            </a>
+          </li>
+        </ul>
+
+        <ul class="user-nav">
+          <li class="user-nav__item">
+            <form class="user-nav__form">
+              <label class="user-nav__label">
+                <span class="sr-only">Введите запрос на поиск</span>
+                <input class="user-nav__input" type="search" name="search" placeholder="Поиск...">
+              </label>
+              <button class="user-nav__btn" type="submit">
+                <svg class="user-nav__img">
+                  <use xlink:href="images/sprite.svg#user-nav--search"></use>
+                </svg>
+              </button>
+            </form>
+          </li>
+          <li class="user-nav__item">
+            <a class="user-nav__link" href="#">
+              <svg class="user-nav__img">
+                <use xlink:href="images/sprite.svg#user-nav--cart"></use>
+              </svg>
+              <span class="user-nav__counter">
+                4
+              </span>
+              <span class="sr-only">
+                Перейти в корзину
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div class="mobile-menu">
+    <div class="mobile-menu__content">
+      <div class="container">
+
+      <a class="logo mobile-menu__logo" href="#">
+        <img class="logo__img mobile-menu__logo-img header__logo-img" width="200" height="39" src="images/logo.svg"
+          alt="Логотип сайта">
+      </a>
+
+      <button class="mobile-menu__btn wrapper-click mobile-menu__wrapper-click header__btn" type="button">
+        <span class="mobile-menu__span header__span"></span>
+      </button>
+
+      <div class="contacts contacts-mobile" id="contacts">
+        <ul class="contacts__items">
+          <li class="contacts__item ">
+            <a class="contacts__link contacts__link--adress status wrappwrapper-click"
+              href="https://yandex.ru/maps/?text=Минск,улица Смирнова, 2к3" target="_blank">
+              ул. Смирнова 2/3
+            </a>
+          </li>
+          <li class="contacts__item  ">
+            <a class="contacts__link contacts__link--tel status wrappwrapper-click" href="tel:+79068057043"
+              target="_blank">
+              79068057043
+            </a>
+          </li>
+          <li class="contacts__item">
+            <a class="contacts__link contacts__link--mail status wrappwrapper-click" href="mailto:support@sfood.com"
+              target="_blank">
+              support@sfood.com
+            </a>
+          </li>
+        </ul>
+
+        <ul class="social social-mobile">
+          <li class="social__item">
+            <a class="social__link wrapper-click" href="#" target="_blank">
+              <svg>
+                <use xlink:href="images/sprite.svg#footer--facebook"></use>
+                <span class="sr-only">
+                  Перейти в facebook
+                </span>
+              </svg>
+            </a>
+          </li>
+          <li class="social__item">
+            <a class="social__link wrapper-click" href="#" target="_blank">
+              <svg>
+                <use xlink:href="images/sprite.svg#footer--twitter"></use>
+                <span class="sr-only">
+                  Перейти в twitter
+                </span>
+              </svg>
+            </a>
+          </li>
+          <li class="social__item">
+            <a class="social__link wrapper-click" href="#" target="_blank">
+              <svg>
+                <use xlink:href="images/sprite.svg#footer--instagram"></use>
+                <span class="sr-only">
+                  Перейти в instagram
+                </span>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="overlay"></div>
+
+</header>
