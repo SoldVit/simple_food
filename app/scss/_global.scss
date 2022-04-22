@@ -35,6 +35,7 @@ main {
   outline: transparent;
   border-radius: 5px;
   transition: border 0.3s, opacity 0.3s;
+  display: inline-block;
 
   &:focus {
     box-shadow: 0 0 0 2px rgba($orange-900, 0.7);
@@ -58,7 +59,7 @@ main {
   color: $white;
   fill: $white;
   border-radius: 6px;
-  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, fill 0.3s, ;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, fill 0.3s;
   line-height: 1.3;
   font-size: 14px;
   display: inline-block;
@@ -83,6 +84,53 @@ main {
     background-color: rgba($accent-status, 0.1);
     color: $orange-900;
     fill: $orange-900;
+  }
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+
+  li {
+    line-height: 0;
+
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+  }
+
+  button {
+    font-size: 0;
+    background-color: $silver;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    width: 15px;
+    height: 15px;
+    transition: border-color 0.3s,
+      background-color 0.3s;
+
+    &:focus {
+      border-color: $orange-900;
+    }
+
+    &:hover {
+      background-color: $silver-300;
+      border-color: $orange-900;
+    }
+
+    &:active {
+      background-color: #ffae94;
+    }
+  }
+}
+
+.slick {
+
+  &-active {
+    button {
+      background-color: $orange-900;
+    }
   }
 }
 
@@ -131,14 +179,6 @@ main {
 }
 
 .wrapper-click {
-  position: relative;
-  align-items: center;
-  display: inline-flex;
-  min-height: 44px;
-  min-width: 44px;
-}
-
-.wrapper-click__btn {
   position: relative;
 
   &::after {
