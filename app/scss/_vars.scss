@@ -1,5 +1,6 @@
 $orange-900: #ff6838;
 $orange: #ffae94;
+$orange-800: #faeded;
 $darkblue-900: #363853;
 $dark: #31352b;
 $accent-status: #ff7a501a;
@@ -9,11 +10,40 @@ $silver-300: #fff2ed;
 $silver-400: #eeeff3;
 $white: #fff;
 $silver: #c2c2c2;
-$dark: #000;
 $gray: #ff7a501a;
 
+$xl: 1150px;
+$lg: 900px;
+$md: 750px;
+$sm: 640px;
+$xs: 440px;
+
+@mixin max-w($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin min-w($width) {
+  @media (min-width: calc($width + 1px)) {
+    @content;
+  }
+}
+
+@mixin max-h($height) {
+  @media (max-height: $height) {
+    @content;
+  }
+}
+
+@mixin min-h($height) {
+  @media (min-height: calc($height + 1px)) {
+    @content;
+  }
+}
+
 @mixin text-shorten($lines) {
-  
+
   @if $lines !=null {
     display: -webkit-box;
     -webkit-line-clamp: $lines;
@@ -27,4 +57,10 @@ $gray: #ff7a501a;
     overflow: hidden;
     display: block;
   }
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: '') {
+  content: $content;
+  display: $display;
+  position: $pos;
 }

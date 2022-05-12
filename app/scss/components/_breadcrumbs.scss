@@ -1,0 +1,45 @@
+.breadcrumbs {
+  margin: 159px 0 60px;
+  padding: 24px 0;
+  background-color: rgba(255, 122, 80, 0.1);
+
+  @include max-w($lg) {
+    margin-top: 72px;
+  }
+
+  @include max-w($sm) {
+    margin-bottom: 40px;
+  }
+
+  &__items {
+    display: flex;
+    color: #505050;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  &__item {
+    margin-right: 17px;
+    position: relative;
+
+    &::before {
+      @include pseudo;
+      background-image: url('../../images/icons/breadcrumbs/arrow.svg');
+      width: 6px;
+      height: 10px;
+      left: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &:first-child::before {
+      display: none;
+    }
+  }
+
+  &__link.wrapper-click {
+    &::after {
+      transform: translate(0%, -72%);
+    }
+  }
+}

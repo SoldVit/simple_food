@@ -1,0 +1,64 @@
+<header class="header" id="header">
+  <div class="container">
+    <nav class="header__inner">
+
+      <a class="logo" href="#">
+        <img class="logo__img header__logo-img" width="200" height="39" src="images/logo.svg" alt="Логотип сайта">
+      </a>
+
+      <div class="header__nav">
+
+        @include('../components/_burger.html', {
+          'class-btn': 'burger',
+          'class-line': 'burger__line'
+        })
+        <ul class="menu">
+          <li class="menu__item">
+            <a class="menu__link status menu__link--active wrapper-click" href="#header">
+              Главная
+            </a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link status wrapper-click" href="#categories">
+              Блюда
+            </a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link status wrapper-click" href="#contacts">
+              Контакты
+            </a>
+          </li>
+        </ul>
+
+        <ul class="user-nav">
+          <li class="user-nav__item">
+            <form class="user-nav__form">
+              <label class="user-nav__label">
+                <span class="sr-only">Введите запрос на поиск</span>
+                <input class="user-nav__input" type="search" name="search" placeholder="Поиск...">
+              </label>
+              <button class="user-nav__btn" type="submit">
+                <svg class="user-nav__img">
+                  <use xlink:href="images/sprite.svg#user-nav--search"></use>
+                </svg>
+              </button>
+            </form>
+          </li>
+          <li class="user-nav__item">
+            <a class="user-nav__link" href="#">
+              <svg class="user-nav__img">
+                <use xlink:href="images/sprite.svg#user-nav--cart"></use>
+              </svg>
+              <span class="user-nav__counter">
+                4
+              </span>
+              <span class="sr-only">
+                Перейти в корзину
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>

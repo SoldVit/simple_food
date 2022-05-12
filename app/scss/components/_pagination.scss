@@ -1,0 +1,122 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-left: 313px;
+
+  @include max-w($xl) {
+    margin: 0 auto;
+  }
+  
+  @include max-w($sm) {
+    max-width: 277px;
+    overflow: auto;
+  }
+}
+
+.prev,
+.next {
+  font-size: 0 !important;
+  width: 48px;
+  height: 48px;
+  position: relative;
+  border: transparent !important;
+
+  &::before {
+    @include pseudo;
+    width: 11px;
+    height: 18px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: 16px;
+  }
+
+  &:hover {
+    background-color: $orange-800 !important;
+  }
+
+  &:active {
+    box-shadow: none !important;
+  }
+}
+
+.prev {
+  &::before {
+    background-image: url('../../images/sprite.svg#pagination--arrow-left-black');
+  }
+}
+
+.next {
+  &::before {
+    background-image: url('../../images/sprite.svg#pagination--arrow-right-black');
+  }
+}
+
+.prev.current,
+.next.current {
+  width: 48px;
+  height: 48px;
+  position: relative;
+  border: transparent !important;
+
+  &::before {
+    @include pseudo;
+    width: 11px;
+    height: 18px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('../../images/sprite.svg#pagination--arrow-left-silver');
+  }
+}
+
+.next.current {
+  &::before {
+    background-image: url('../../images/sprite.svg#pagination--arrow-right-silver');
+  }
+}
+
+.light-theme a,
+.light-theme span {
+  color: $darkblue-900;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 400;
+  border: transparent;
+  min-width: 48px;
+  height: 48px;
+  padding: 15px 0 0 0;
+  margin: 0 6px 0 0;
+  border-radius: 3px;
+  box-shadow: none;
+  background: $orange-800;
+  transition: border 0.3s, box-shadow 0.3s;
+
+  &:focus {
+    border: 1px solid $orange-900;
+  }
+
+  &:active {
+    box-shadow: inset 0px -1px 4px 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.light-theme .current {
+  background: $orange-800;
+  color: $darkblue-900;
+  box-shadow: transparent;
+  border: 1px solid $darkblue-900;
+}
+
+.light-theme .ellipse {
+  background: $orange-800;
+  border-radius: 3px;
+  font-weight: 400;
+}
+
+.light-theme a:hover,
+.light-theme li:not(.disabled):not(.active) span:hover {
+  transition: background 0.3s, color 0.3s;
+  background: $orange-900;
+  color: $white;
+}

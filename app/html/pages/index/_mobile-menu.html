@@ -1,0 +1,91 @@
+<div class="mobile-menu">
+  <div class="mobile-menu__content">
+    <div class="container">
+
+      <a class="logo mobile-menu__logo" href="#">
+        <img class="logo__img mobile-menu__logo-img header__logo-img" width="200" height="39" src="images/logo.svg"
+          alt="Логотип сайта">
+      </a>
+
+      @include('../../components/_burger.html', {
+      'class-btn': 'burger burger--close',
+      'class-line': 'burger__line burger__line--close'
+      })
+      <ul class="mobile-menu__items">
+        <li class="mobile-menu__item">
+          <a class="mobile-menu__link mobile-menu__link--active status  wrapper-click" href="#header">
+            Главная
+          </a>
+        </li>
+        <li class="mobile-menu__item">
+          <a class="mobile-menu__link status wrapper-click" href="#categories">
+            Блюда
+          </a>
+        </li>
+        <li class="mobile-menu__item">
+          <a class="mobile-menu__link status wrapper-click" href="#contacts">
+            Контакты
+          </a>
+        </li>
+      </ul>
+
+      <div class="contacts contacts-mobile">
+        <ul class="contacts__items">
+          <li class="contacts__item ">
+            <a class="contacts__link contacts__link--adress status wrappwrapper-click"
+              href="https://yandex.ru/maps/?text=Минск,улица Смирнова, 2к3" target="_blank">
+              ул. Смирнова 2/3
+            </a>
+          </li>
+          <li class="contacts__item  ">
+            <a class="contacts__link contacts__link--tel status wrappwrapper-click" href="tel:+79068057043"
+              target="_blank">
+              79068057043
+            </a>
+          </li>
+          <li class="contacts__item">
+            <a class="contacts__link contacts__link--mail status wrappwrapper-click" href="mailto:support@sfood.com"
+              target="_blank">
+              support@sfood.com
+            </a>
+          </li>
+        </ul>
+
+        <ul class="social">
+          <li class="social__item">
+            <a class="social__link wrapper-click" href="#" target="_blank">
+              <svg>
+                <use xlink:href="images/sprite.svg#footer--facebook"></use>
+              </svg>
+              <span class="sr-only">
+                Перейти в facebook
+              </span>
+            </a>
+          </li>
+          <li class="social__item">
+            <a class="social__link wrapper-click" href="#" target="_blank">
+              <svg>
+                <use xlink:href="images/sprite.svg#footer--twitter"></use>
+              </svg>
+              <span class="sr-only">
+                Перейти в twitter
+              </span>
+            </a>
+          </li>
+          <li class="social__item">
+            <a class="social__link wrapper-click" href="#" target="_blank">
+              <svg>
+                <use xlink:href="images/sprite.svg#footer--instagram"></use>
+              </svg>
+              <span class="sr-only">
+                Перейти в instagram
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+@include('../../components/_overlay.html')
