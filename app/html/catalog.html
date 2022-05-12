@@ -1,17 +1,15 @@
 @include('blocks/_head.html', {
-  'title': 'ДОСТАВКА ЗА 15 МИНУТ'
+'title': 'Каталог'
 })
 @include('blocks/_header.html')
 <main class="main">
 
-  @include('pages/index/_hero.html')
-  @include('pages/index/_categories.html')
-  @include('pages/index/_features.html')
-  @include('pages/index/_restaurants.html')
-  @include('pages/index/_reviews.html')
+  @include('pages/catalog/_catalog.html')
   @include('pages/index/_application.html')
+  @include('pages/catalog/_discounts.html')
 </main>
 
 @include('blocks/_footer.html')
 @include('pages/index/_mobile-menu.html')
+@include('pages/catalog/_catalog-mobile.html')
 @include('blocks/_footer-scripts.html')

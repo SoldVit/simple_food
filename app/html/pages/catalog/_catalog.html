@@ -1,0 +1,258 @@
+@include('../../components/_breadcrumbs.html', {
+'page': 'Каталог товаров'
+})
+<section class="catalog">
+  <div class="container">
+
+    <div class="catalog__sort">
+
+      <h2 class="title catalog__title">Каталог продуктов</h2>
+
+      <form class="sort__form" action="#" name="cортировка">
+        <label class="sort__label">
+          <select class="sort__select" name="sort">
+            <option value="значение">По названию</option>
+            <option value="значение">По цене</option>
+            <option value="значение">По популярности</option>
+          </select>
+        </label>
+        <label class="sort__label">
+          <select class="sort__select" name="sort">
+            <option value="значение">по 12</option>
+            <option value="значение">по 24</option>
+            <option value="значение">по 32</option>
+          </select>
+        </label>
+      </form>
+    </div>
+
+    <button class="catalog__btn-mobile" type="button"></button>
+    <div class="catalog__inner">
+      <div class="catalog__filters">
+        <div class="filter-group catalog__filter">
+          <h3 class="catalog__filter-title">
+            Категории
+          </h3>
+
+          <ul class="filter-group__items catalog__filter-items">
+            <li class="filter-group__item status">
+              <a class="filter-group__link wrapper-click" href="#" data-filter="all">
+                Бургеры
+              </a>
+            </li>
+            <li class="filter-group__item status">
+              <a class="filter-group__link wrapper-click" href="#" data-filter=".category-a">
+                Пицца
+              </a>
+            </li>
+            <li class="filter-group__item status">
+              <a class="filter-group__link wrapper-click" href="#" data-filter=".category-b">
+                Сендвичи
+              </a>
+            </li>
+            <li class="filter-group__item status">
+              <a class="filter-group__link wrapper-click" href="#" data-filter=".category-c">
+                Азиатская кухня
+              </a>
+            </li>
+            <li class="filter-group__item status">
+              <a class="filter-group__link wrapper-click" href="#" data-filter=".category-d">
+                Сеты
+              </a>
+            </li>
+            <li class="filter-group__item status">
+              <a class="filter-group__link wrapper-click" href="#" data-filter=".category-e">
+                Европейская кухня
+              </a>
+            </li>
+            <li class="filter-group__item status">
+              <a class="filter-group__link wrapper-click" href="#" data-filter=".category-f">
+                Напитки
+              </a>
+            </li>
+            <li class="filter-group__item status">
+              <a class="filter-group__link wrapper-click" href="#" data-filter=".category-g">
+                Алкоголь
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="filter-offer  catalog__filter">
+
+          <h3 class="catalog__filter-title">
+            Предложения
+          </h3>
+          <!-- Нужно ли в таких случаях делать списком? Когда ul и li 
+          будут просто пустые обертки. -->
+          <form class="filter-offer__form catalog__filter-items" action="#">
+            <label class="filter-offer__label wrapper-click">
+              <input type="checkbox" name="discount" class="filter-offer__input input-hidden">
+              <span class="filter-offer__chekbox"></span>         
+              <span class="filter-offer__text status">Со скидкой</span>
+            </label>
+            <label class="filter-offer__label wrapper-click">
+              <input type="checkbox" class="filter-offer__input input-hidden" checked name="novelty">
+              <span class="filter-offer__chekbox"></span>
+              <span class="filter-offer__text">Новинка</span>
+            </label>
+            <label class="filter-offer__label wrapper-click">
+              <input type="checkbox" class="filter-offer__input input-hidden" name="hit">
+              <span class="filter-offer__chekbox"></span>
+              <span class="filter-offer__text">Хит</span>
+            </label>
+          </form>
+        </div>
+
+        <div class="filter-price catalog__filter">
+
+          <h3 class="catalog__filter-title">
+            Цена
+          </h3>
+
+          <form class="filter-price__form catalog__filter-items" action="#">
+            <label class="filter-price__label">
+              <span class="filter-price__text">от</span>
+              <span class="sr-only">диапазон цен от</span>
+              <input class="filter-price__from" type="text" name="price-from">
+              <span class="filter-price__text">₽</span>
+            </label>
+            <label class="filter-price__label">
+              <span class="filter-price__text">до</span>
+               <span class="sr-only">диапазон цен до</span>
+              <input class="filter-price__to" name="price-to" type="text">
+              <span class="filter-price__text">₽</span>
+            </label>
+            <input class="filter-price__range" name="price-range" type="text" data-min="0" data-max="1300"
+              data-from="100" data-to="1000">
+          </form>
+        </div>
+
+      </div>
+      <ul class="catalog__content">
+        <li class="catalog__content-item">
+
+          @include('../../components/_product-card.html', {
+          'mix': 'a',
+          'img': '../../../images/product-card/01.jpg',
+          'title': 'Чизбургер с листьями салата',
+          'price': '160'
+          })
+        </li>
+
+        <li class="catalog__content-item">
+
+          @include('../../components/_product-card.html', {
+          'mix': 'g',
+          'img': '../../../images/product-card/02.jpg',
+          'title': 'Бифбургер',
+          'price': '190'
+          })
+        </li>
+
+        <li class="catalog__content-item">
+
+          @include('../../components/_product-card.html', {
+          'mix': 'b',
+          'img': '../../../images/product-card/03.jpg',
+          'title': 'Королевский чизбургер',
+          'price': '260'
+          })
+        </li>
+
+        <li class="catalog__content-item">
+
+          @include('../../components/_product-card.html', {
+          'mix': 'f',
+          'img': '../../../images/product-card/04.jpg',
+          'title': 'Черный гамбургер',
+          'price': '199'
+          })
+        </li>
+
+        <li class="catalog__content-item">
+
+          @include('../../components/_product-card.html', {
+          'mix': 'c',
+          'img': '../../../images/product-card/01.jpg',
+          'title': 'Чизбургер с листьями салата',
+          'price': '160'
+          })
+        </li>
+
+        <li class="catalog__content-item">
+
+          @include('../../components/_product-card.html', {
+          'mix': 'c',
+          'img': '../../../images/product-card/02.jpg',
+          'title': 'Бифбургер',
+          'price': '190'
+          })
+        </li>
+
+        <li class="catalog__content-item">
+
+          @include('../../components/_product-card.html', {
+          'mix': 'd',
+          'img': '../../../images/product-card/03.jpg',
+          'title': 'Королевский чизбургер',
+          'price': '260'
+          })
+        </li>
+
+        <li class="catalog__content-item">
+
+          @include('../../components/_product-card.html', {
+          'mix': 'e',
+          'img': '../../../images/product-card/04.jpg',
+          'title': 'Черный гамбургер',
+          'price': '199'
+          })
+        </li>
+
+        <li class="catalog__content-item">
+
+          @include('../../components/_product-card.html', {
+          'mix': 'a',
+          'img': '../../../images/product-card/01.jpg',
+          'title': 'Чизбургер с листьями салата',
+          'price': '160'
+          })
+        </li>
+
+        <li class="catalog__content-item">
+
+          @include('../../components/_product-card.html', {
+          'mix': 'a',
+          'img': '../../../images/product-card/02.jpg',
+          'title': 'Бифбургер',
+          'price': '190'
+          })
+        </li>
+
+        <li class="catalog__content-item">
+
+          @include('../../components/_product-card.html', {
+          'mix': 'a',
+          'img': '../../../images/product-card/03.jpg',
+          'title': 'Королевский чизбургер',
+          'price': '260'
+          })
+        </li>
+
+        <li class="catalog__content-item">
+
+          @include('../../components/_product-card.html', {
+          'mix': 'a',
+          'img': '../../../images/product-card/04.jpg',
+          'title': 'Черный гамбургер',
+          'price': '199'
+          })
+        </li>
+      </ul>
+    </div>
+
+    @include('../../components/_pagination.html')
+  </div>
+
+</section>

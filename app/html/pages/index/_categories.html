@@ -1,0 +1,158 @@
+<section class="categories" id="categories">
+  <div class="container">
+    <h2 class="categories__title title">
+      Популярные категории
+    </h2>
+
+    <ul class="filter-categories">
+      <li class="filter-categories__item">
+        <button class="filter-categories__btn filter-categories__btn--burgers" type="button" data-filter="all">
+          <svg class="filter-categories__btn-img">
+            <use xlink:href="images/sprite.svg#filter--burgers"></use>
+          </svg>
+          <span class="filter-categories__span">Бургеры</span>
+        </button>
+      </li>
+      <li class="filter-categories__item">
+        <button class="filter-categories__btn filter-categories__btn--pizza" type="button" data-filter=".category-b">
+          <svg class="filter-categories__btn-img">
+            <use xlink:href="images/sprite.svg#filter--pizza"></use>
+          </svg>
+          <span class="filter-categories__span">Пицца</span>
+        </button>
+      </li>
+      <li class="filter-categories__item">
+        <button class="filter-categories__btn filter-categories__btn--sandwiches" type="button"
+          data-filter=".category-c">
+          <svg class="filter-categories__btn-img">
+            <use xlink:href="images/sprite.svg#filter--sandwiches"></use>
+          </svg>
+          <span class="filter-categories__span">Сендвичи</span>
+        </button>
+      </li>
+      <li class="filter-categories__item">
+        <button class="filter-categories__btn filter-categories__btn--asia" type="button" data-filter=".category-a">
+          <svg class="filter-categories__btn-img">
+            <use xlink:href="images/sprite.svg#filter--asia"></use>
+          </svg>
+          <span class="filter-categories__span">Азиатская кухня</span>
+        </button>
+      </li>
+      <li class="filter-categories__item">
+        <button class="filter-categories__btn filter-categoriess__btn--sets" type="button" data-filter=".category-e">
+          <svg class="filter-categories__btn-img">
+            <use xlink:href="images/sprite.svg#filter--sets"></use>
+          </svg>
+          <span class="filter-categories__span">Cеты</span>
+        </button>
+      </li>
+    </ul>
+
+    <ul class="categories__items">
+      <li class="categories__item">
+
+        @include('../../components/_product-card.html', {
+        'img': 'images/product-card/01.jpg',
+        'title': 'Чизбургер с листьями салата',
+        'mix': "b",
+        'price': '160'
+        })
+      </li>
+
+      <li class="categories__item">
+
+        @include('../../components/_product-card.html', {
+        'img': 'images/product-card/02.jpg',
+        'title': 'Бифбургер',
+        'mix': "b",
+        'price': '160'
+        })
+      </li>
+
+      <li class="categories__item">
+
+        @include('../../components/_product-card.html', {
+        'img': 'images/product-card/03.jpg',
+        'title': 'Королевский чизбургер',
+        'mix': "c",
+        'price': '160'
+        })
+      </li>
+
+      <li class="categories__item">
+
+        @include('../../components/_product-card.html', {
+        'img': 'images/product-card/04.jpg',
+        'title': 'Черный гамбургер',
+        'mix': "b",
+        'price': '160'
+        })
+      </li>
+
+      <li class="categories__item">
+
+        @include('../../components/_product-card.html', {
+        'img': 'images/product-card/05.jpg',
+        'title': 'Чикен бургер',
+        'mix': "c",
+        'price': '160'
+        })
+      </li>
+
+      <li class="categories__item">
+
+        @include('../../components/_product-card.html', {
+        'img': 'images/product-card/01.jpg',
+        'title': 'Чизбургер с листьями салата',
+        'mix': "d",
+        'price': '160'
+        })
+      </li>
+
+      <li class="categories__item">
+
+        @include('../../components/_product-card.html', {
+        'img': 'images/product-card/02.jpg',
+        'title': 'Бифбургер',
+        'mix': "d",
+        'price': '160'
+        })
+      </li>
+
+      <li class="categories__item">
+
+        @include('../../components/_product-card.html', {
+        'img': 'images/product-card/03.jpg',
+        'title': 'Королевский чизбургер',
+        'mix': "e",
+        'price': '160'
+        })
+      </li>
+
+      <li class="categories__item">
+
+        @include('../../components/_product-card.html', {
+        'img': 'images/product-card/04.jpg',
+        'title': 'Черный гамбургер',
+        'mix': "e",
+        'price': '160'
+        })
+      </li>
+
+      <li class="categories__item">
+
+        @include('../../components/_product-card.html', {
+        'img': 'images/product-card/05.jpg',
+        'title': 'Чикен бургер',
+        'mix': "c",
+        'price': '160'
+        })
+      </li>
+    </ul>
+
+    <div class="categories__dropdown ">
+      <button class="categories__btn categories__wrapper-click wrapper-click status outline" type="button">Показать
+        еще</button>
+    </div>
+  </div>
+</section>
