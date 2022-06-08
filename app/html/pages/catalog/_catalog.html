@@ -1,7 +1,8 @@
 @include('../../components/_breadcrumbs.html', {
 'page': 'Каталог товаров'
 })
-<section class="catalog">
+
+<section class="catalog" id="catalog">
   <div class="container">
 
     <div class="catalog__sort">
@@ -34,7 +35,7 @@
             Категории
           </h3>
 
-          <ul class="filter-group__items catalog__filter-items">
+          <ul class="filter-group__items catalog__filter-items" data-ref="container-2" >
             <li class="filter-group__item status">
               <a class="filter-group__link wrapper-click" href="#" data-filter="all">
                 Бургеры
@@ -88,7 +89,7 @@
           <form class="filter-offer__form catalog__filter-items" action="#">
             <label class="filter-offer__label wrapper-click">
               <input type="checkbox" name="discount" class="filter-offer__input input-hidden">
-              <span class="filter-offer__chekbox"></span>         
+              <span class="filter-offer__chekbox"></span>
               <span class="filter-offer__text status">Со скидкой</span>
             </label>
             <label class="filter-offer__label wrapper-click">
@@ -119,7 +120,7 @@
             </label>
             <label class="filter-price__label">
               <span class="filter-price__text">до</span>
-               <span class="sr-only">диапазон цен до</span>
+              <span class="sr-only">диапазон цен до</span>
               <input class="filter-price__to" name="price-to" type="text">
               <span class="filter-price__text">₽</span>
             </label>

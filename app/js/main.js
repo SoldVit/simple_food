@@ -64,9 +64,9 @@ $(function () {
   });
 
   // Стили для селекта
-  $('.sort__select').styler();
+  $('.sort__select, .product__input').styler();
 
-  // Закрыть мобильное меню по esc
+  // Закрыть по esc
   $("body").keyup((e) => {
     if (e.keyCode === 27) {
       $('.mobile-menu').removeClass('mobile-menu--active');
@@ -74,6 +74,7 @@ $(function () {
       $('.menu').removeClass('menu--active');
       $('.catalog-mobile').removeClass('catalog-mobile--active');
       $('.catalog__filters').removeClass('catalog__filters--active');
+      $('.user-nav__input').removeClass('user-nav__input--active');
     }
   });
 
@@ -93,22 +94,14 @@ $(function () {
 
   // Поиск
   $('.user-nav__btn').on('click', function () {
-    $('.user-nav__input').addClass('user-nav__input--active');
+    $('.user-nav__input').toggleClass('user-nav__input--active');
   });
 
   // Открыть фильтр категории
   $('.catalog__btn-mobile').on('click', function () {
     $('.catalog-mobile').toggleClass('catalog-mobile--active');
     $('.catalog__filters').toggleClass('catalog__filters--active');
-      $('.overlay').toggleClass('overlay--active');
-  });
-
-  // Закрыть поиск по клику в любом месте документа
-  $(document).on('mouseup', function (e) {
-    let s = $('.user-nav__input--active');
-    if (!s.is(e.target) && s.has(e.target).length === 0) {
-      s.removeClass('user-nav__input--active');
-    }
+    $('.overlay').toggleClass('overlay--active');
   });
 
   // Активный статус меню
@@ -118,7 +111,7 @@ $(function () {
   });
 
   // Скрол для якорей
-  $('.menu__link, .mobile-menu__link').on('click', function () {
+  $('.menu__link, .mobile-menu__link, .hero__btn').on('click', function () {
     let href = $(this).attr('href');
     $('html, body').animate({
       scrollTop: $(href).offset().top
@@ -136,7 +129,7 @@ $(function () {
   $(window).scroll(function () {
     var scrolled = $(window).scrollTop();
 
-    if (scrolled > 50 && scrolled > scrollPrev) {
+    if (scrolled > 50) {
       $('.header').addClass('header--scroll');
     } else {
       $('.header').removeClass('header--scroll');
@@ -144,10 +137,7 @@ $(function () {
     scrollPrev = scrolled;
   });
 
-  // Микситап
-  var mixer = mixitup('.categories__items, .catalog__content');
-
-  // Слик комментарии пользователей
+  // Слaйдер комментарии пользователей
   $('.reviews__slider').slick({
     dots: true,
     arrows: true,
@@ -159,9 +149,49 @@ $(function () {
     dotsClass: 'dots reviews__dots'
   });
 
-  // Мобильный слик - рестораны
-  var handleMatchMedia = function (mediaQuery) {
-      if (mediaQuery.matches) {
+  // Слaйдер предложения
+  $('.sentence__slider').slick({
+    dots: false,
+    arrows: true,
+    autoplay: true,
+    infinite: true,
+    autoplaySpeed: 2000,
+    slidesToScroll: 5,
+    slidesToShow: 5,
+    prevArrow: '.reviews__btn--left',
+    nextArrow: '.reviews__btn--right',
+  });
+
+  // Слайдер страницы продукта
+  $('.product__slider').slick({
+    dots: false,
+    arrows: true,
+    fade: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+
+    responsive: [{
+      breakpoint: 1150,
+      settings: {
+        arrows: false
+      }
+    }]
+
+
+  });
+
+  // --Мобильный слайдер рестораны
+
+  // Подпишемся на ресайз и продиспатчим его для запуска
+  $(window).on('resize', function (e) {
+    // Переменная, по которой узнаем запущен слайдер или нет.
+    // Храним её в data
+    var init = $(".restaurants__items").data('init-slider');
+    // Если мобильный
+    if (window.innerWidth < 640) {
+      // Если слайдер не запущен
+      if (init != 1) {
+        // Запускаем слайдер и записываем в data init-slider = 1
         $('.restaurants__items').slick({
           dots: true,
           arrows: false,
@@ -169,18 +199,36 @@ $(function () {
           autoplay: true,
           autoplaySpeed: 2000,
           dotsClass: 'dots restaurants__dots'
+        }).data({
+          'init-slider': 1
         });
-      } else {
-        $('.restaurants__items').slick('unslick')
       }
-    },
-    mql = window.matchMedia('all and (max-width: 640px)');
-  handleMatchMedia(mql);
-  mql.addListener(handleMatchMedia);
+    }
+    // Если десктоп
+    else {
+      // Если слайдер запущен
+      if (init == 1) {
+        // Разрушаем слайдер и записываем в data init-slider = 0
+        $('.restaurants__items').slick('unslick').data({
+          'init-slider': 0
+        });
+      }
+    }
+  }).trigger('resize');
 
-  // Мобильный слик - Акици и скидки
-  var handleMatchMedia = function (mediaQuery) {
-      if (mediaQuery.matches) {
+
+  // --Мобильный слайдер акции и скидки
+
+  // Подпишемся на ресайз и продиспатчим его для запуска
+  $(window).on('resize', function (e) {
+    // Переменная, по которой узнаем запущен слайдер или нет.
+    // Храним её в data
+    var init = $(".discounts__items").data('init-slider');
+    // Если мобильный
+    if (window.innerWidth < 640) {
+      // Если слайдер не запущен
+      if (init != 1) {
+        // Запускаем слайдер и записываем в data init-slider = 1
         $('.discounts__items').slick({
           dots: true,
           arrows: false,
@@ -188,12 +236,32 @@ $(function () {
           autoplay: true,
           autoplaySpeed: 2000,
           dotsClass: 'dots restaurants__dots'
+        }).data({
+          'init-slider': 1
         });
-      } else {
-        $('.discounts__items').slick('unslick')
       }
-    },
-    mql = window.matchMedia('all and (max-width: 640px)');
-  handleMatchMedia(mql);
-  mql.addListener(handleMatchMedia);
+    }
+    // Если десктоп
+    else {
+      // Если слайдер запущен
+      if (init == 1) {
+        // Разрушаем слайдер и записываем в data init-slider = 0
+        $('.discounts__items').slick('unslick').data({
+          'init-slider': 0
+        });
+      }
+    }
+  }).trigger('resize');
+
+  // Табы на product-page
+  $('.product-tabs__link').on('click', function (e) {
+    e.preventDefault();
+    $('.product-tabs__link').removeClass('product-tabs__link--active');
+    $(this).addClass('product-tabs__link--active');
+    $('.product-content__item').removeClass('product-content__item--active');
+    $($(this).attr('href')).addClass('product-content__item--active');
+  });
+
+  // Микситап - всегда ставим последним
+  var mixer = mixitup('.categories__items, .catalog__content');
 });

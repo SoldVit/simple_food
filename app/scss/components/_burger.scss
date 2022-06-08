@@ -7,7 +7,7 @@
   order: 1;
   outline: transparent;
 
-  @include max-w($sm) {
+  @include max-w($lg) {
     display: block;
   }
 
@@ -17,7 +17,7 @@
     width: 28px;
     background-color: $darkblue-900;
 
-    @include max-w($sm) {
+    @include max-w($lg) {
       display: block;
     }
 
@@ -44,20 +44,22 @@
   &--close {
     right: -235px;
     top: -50px;
+
+    .burger__line {
+      background-color: transparent;
+
+      &::before {
+        top: 22px;
+        transform: rotate(-45deg);
+      }
+
+      &::after {
+        transform: rotate(45deg);
+        top: 22px;
+      }
+    }
   }
 
-  &__line--close {
-    background-color: transparent;
 
-    &::before {
-      top: 22px;
-      transform: rotate(-45deg);
-    }
-
-    &::after {
-      transform: rotate(45deg);
-      top: 22px;
-    }
-  }
 
 }

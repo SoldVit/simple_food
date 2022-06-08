@@ -1,30 +1,29 @@
-<header class="header" id="header">
+<header class="header">
   <div class="container">
     <nav class="header__inner">
 
-      <a class="logo" href="#">
+      <a class="logo" href="index.html">
         <img class="logo__img header__logo-img" width="200" height="39" src="images/logo.svg" alt="Логотип сайта">
       </a>
 
       <div class="header__nav">
 
         @include('../components/_burger.html', {
-          'class-btn': 'burger',
-          'class-line': 'burger__line'
+        'class-btn': 'burger'
         })
         <ul class="menu">
           <li class="menu__item">
-            <a class="menu__link status menu__link--active wrapper-click" href="#header">
+            <a class="menu__link status menu__link--active wrapper-click" href="@link-header">
               Главная
             </a>
           </li>
           <li class="menu__item">
-            <a class="menu__link status wrapper-click" href="#categories">
+            <a class="menu__link status wrapper-click" href="@link-categories">
               Блюда
             </a>
           </li>
           <li class="menu__item">
-            <a class="menu__link status wrapper-click" href="#contacts">
+            <a class="menu__link status wrapper-click" href="@link-contacts">
               Контакты
             </a>
           </li>
@@ -36,12 +35,12 @@
               <label class="user-nav__label">
                 <span class="sr-only">Введите запрос на поиск</span>
                 <input class="user-nav__input" type="search" name="search" placeholder="Поиск...">
+                <button class="user-nav__btn" type="submit">
+                  <svg class="user-nav__img">
+                    <use xlink:href="images/sprite.svg#user-nav--search"></use>
+                  </svg>
+                </button>
               </label>
-              <button class="user-nav__btn" type="submit">
-                <svg class="user-nav__img">
-                  <use xlink:href="images/sprite.svg#user-nav--search"></use>
-                </svg>
-              </button>
             </form>
           </li>
           <li class="user-nav__item">

@@ -1,19 +1,16 @@
 @include('blocks/_head.html', {
-'title': 'Каталог'
+  'title': 'Продукт'
 })
 @include('blocks/_header.html', {
   'link-header': 'index.html',
-  'link-categories': '#catalog',
+  'link-categories': 'catalog.html',
   'link-contacts': '#contacts'
 })
 <main class="main">
 
-  @include('pages/catalog/_catalog.html')
-  @include('pages/index/_application.html')
-  @include('pages/catalog/_discounts.html')
+  @include('pages/product-page/_product-page.html')
 </main>
 
 @include('blocks/_footer.html')
 @include('pages/index/_mobile-menu.html')
-@include('pages/catalog/_catalog-mobile.html')
 @include('blocks/_footer-scripts.html')

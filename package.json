@@ -9,6 +9,8 @@
   "author": "Vitaly Soldatenkov",
   "license": "ISC",
   "devDependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
+    "@fancyapps/ui": "^4.0.27",
     "browser-sync": "^2.27.7",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
@@ -25,6 +27,7 @@
     "jquery": "^3.6.0",
     "jquery-form-styler": "^2.0.2",
     "mixitup": "^3.3.1",
+    "rateyo": "^3.0.0-alpha.2",
     "sass": "^1.43.4",
     "slick-carousel": "^1.8.1"
   },

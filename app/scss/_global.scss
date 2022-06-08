@@ -67,7 +67,7 @@ main {
   color: $white;
   fill: $white;
   border-radius: 6px;
-  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, fill 0.3s;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, fill 0.3s, stroke 0.3s;
   line-height: 1.3;
   font-size: 14px;
   display: inline-block;
@@ -185,11 +185,12 @@ main {
 
   &::after {
     @include pseudo;
-    min-height: 44px;
+    height: 44px;
     min-width: 44px;
     width: 100%;
-    height: 100%;
-    transform: translate(-35%, -72%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
@@ -225,7 +226,6 @@ main {
   top: 33px;
   height: 2px;
   background-color: $silver;
-
   border: transparent;
   border-radius: 0;
 }
@@ -267,4 +267,10 @@ main {
 
 .irs--round {
   bottom: 8px;
+}
+
+.jq-ry-group-wrapper {
+  @include max-w($md) {
+    margin-top: 15px;
+  }
 }
