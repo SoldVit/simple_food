@@ -42,13 +42,13 @@
 
 .prev {
   &::before {
-    background-image: url('../../images/sprite.svg#pagination--arrow-left-black');
+    background-image: url('../images/sprite.svg#pagination--arrow-left-black');
   }
 }
 
 .next {
   &::before {
-    background-image: url('../../images/sprite.svg#pagination--arrow-right-black');
+    background-image: url('../images/sprite.svg#pagination--arrow-right-black');
   }
 }
 
@@ -66,13 +66,13 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url('../../images/sprite.svg#pagination--arrow-left-silver');
+    background-image: url('../images/sprite.svg#pagination--arrow-left-silver');
   }
 }
 
 .next.current {
   &::before {
-    background-image: url('../../images/sprite.svg#pagination--arrow-right-silver');
+    background-image: url('../images/sprite.svg#pagination--arrow-right-silver');
   }
 }
 

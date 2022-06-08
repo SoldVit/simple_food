@@ -3,7 +3,7 @@
   &::before {
     content: '';
     position: fixed;
-    display: none;
+    transform: translateX(-200%);
     background-color: rgba(0, 0, 0, 0.5);
     top: 0;
     bottom: 0;
@@ -16,7 +16,8 @@
   &--active {
 
     &::before {
-      display: block;
+      transition: transform 0.4s;
+      transform: translateX(0);
     }
   }
 }

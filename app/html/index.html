@@ -1,7 +1,11 @@
 @include('blocks/_head.html', {
   'title': 'ДОСТАВКА ЗА 15 МИНУТ'
 })
-@include('blocks/_header.html')
+@include('blocks/_header.html', {
+  'link-header': '#hero',
+  'link-categories': '#categories',
+  'link-contacts': '#contacts'
+})
 <main class="main">
 
   @include('pages/index/_hero.html')

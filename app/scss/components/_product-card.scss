@@ -1,18 +1,16 @@
 .product-card {
+  background-color: $white;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  border: 1px solid transparent;
 
-  &__inner {
-    background-color: $white;
-    padding: 20px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    border: 1px solid transparent;
 
-    &:hover {
-      border: 1px solid $orange-900;
-    }
+  &:hover {
+    border: 1px solid $orange-900;
   }
 
   &__img {
@@ -20,11 +18,13 @@
     object-fit: contain;
   }
 
+
   &__wrapper {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     height: 74px;
+    align-items: center;
   }
 
   &__title {
@@ -32,6 +32,7 @@
     font-weight: 400;
     font-size: 15px;
     line-height: 1;
+
     @include text-shorten(3);
 
     @include max-w($xs) {

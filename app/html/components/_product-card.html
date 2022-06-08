@@ -1,7 +1,6 @@
-  <article class="product-card">
-    <div class="product-card__inner mix category-@mix">
-      <img class="product-card__img" width="140" height="140" src="@img"
-        alt="Чизбургер с листьями салата">
+  <article class="product-card mix category-@mix">
+    <a class="product-card__link" href="@link">
+      <img class="product-card__img" width="140" height="140" src="@img" alt="Чизбургер с листьями салата">
       <div class="product-card__wrapper">
         <h3 class="product-card__title">
           @title
@@ -10,8 +9,8 @@
           @price <span>руб.</span>
         </span>
       </div>
-      <button class="product-card__btn btn-accent" type="button">
-        В корзину
-      </button>
-    </div>
+    </a>
+    <button class="product-card__btn btn-accent" type="button">
+      В корзину
+    </button>
   </article>

@@ -3,8 +3,9 @@
   padding: 24px 0;
   background-color: rgba(255, 122, 80, 0.1);
 
+
   @include max-w($lg) {
-    margin-top: 72px;
+    margin-top: 87px;
   }
 
   @include max-w($sm) {
@@ -22,9 +23,20 @@
     margin-right: 17px;
     position: relative;
 
+    @include max-w($sm) {
+      display: none;
+    }
+
+    &:first-child,
+    &:last-child {
+      @include max-w($sm) {
+        display: block;
+      }
+    }
+
     &::before {
       @include pseudo;
-      background-image: url('../../images/icons/breadcrumbs/arrow.svg');
+      background-image: url('../images/icons/breadcrumbs/arrow.svg');
       width: 6px;
       height: 10px;
       left: -10px;
@@ -34,12 +46,6 @@
 
     &:first-child::before {
       display: none;
-    }
-  }
-
-  &__link.wrapper-click {
-    &::after {
-      transform: translate(0%, -72%);
     }
   }
 }
